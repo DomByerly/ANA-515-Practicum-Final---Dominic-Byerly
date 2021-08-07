@@ -1,0 +1,207 @@
+ version 4.1.0 (2021-05-18) -- "Camp Pontanezen"
+Copyright (C) 2021 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> library(readxl)
+> Copy_of_G_T_Results_2018_19_Responses_Sheet1 <- read_excel("ANA DATA MINING/Copy of G&T Results 2018-19 Responses - Sheet1.xlsx")
+New names:
+* `` -> ...13
+* `` -> ...14
+> View(Copy_of_G_T_Results_2018_19_Responses_Sheet1)
+> #hdhdh
+> dc
+Error: object 'dc' not found
+> #need to clean up data
+> View(Copy_of_G_T_Results_2018_19_Responses_Sheet1)
+> View(Copy_of_G_T_Results_2018_19_Responses_Sheet1)
+> head(District)
+Error in head(District) : object 'District' not found
+> head($District)
+Error: unexpected '$' in "head($"
+> View(Copy_of_G_T_Results_2018_19_Responses_Sheet1)
+> head(Copy_of_G_T_Results_2018_19_Responses_Sheet1)
+# A tibble: 6 x 14
+  Timestamp           `Entering Grade L~ District `Birth Month` `OLSAT Verbal Sc~ `OLSAT Verbal Per~ `NNAT Non Verbal~ `NNAT Non Verbal ~ `Overall Score` `School Preferen~
+  <dttm>              <chr>                 <dbl> <chr>         <chr>                          <dbl> <chr>                          <dbl>           <dbl> <chr>            
+1 2017-03-27 00:00:00 1                        13 August        30                                99 46                                99              99 Anderson?        
+2 2018-03-27 00:00:00 1                         1 March         26                                99 47                                99              99 1111             
+3 2018-03-27 00:00:00 1                         2 February      26                                99 47                                99              99 NA               
+4 2018-03-27 00:00:00 1                         2 January       25                                99 45                                99              99 NEST+M           
+5 2018-03-27 00:00:00 first                     3 January       28                                98 45                                 0              99 NEST,Anderson,TA~
+6 2018-03-27 00:00:00 1                         2 May           25                                99 NA                                99              99 NEST+M           
+# ... with 4 more variables: School Assigned <chr>, Will you enroll there? <chr>, ...13 <chr>, ...14 <chr>
+> mean(Copy_of_G_T_Results_2018_19_Responses_Sheet1$`OLSAT Verbal Score`)
+[1] NA
+Warning message:
+In mean.default(Copy_of_G_T_Results_2018_19_Responses_Sheet1$`OLSAT Verbal Score`) :
+  argument is not numeric or logical: returning NA
+> mean(Copy_of_G_T_Results_2018_19_Responses_Sheet1$`OLSAT Verbal Score`,na.rm = TRUE)
+[1] NA
+Warning message:
+In mean.default(Copy_of_G_T_Results_2018_19_Responses_Sheet1$`OLSAT Verbal Score`,  :
+  argument is not numeric or logical: returning NA
+> mean(Copy_of_G_T_Results_2018_19_Responses_Sheet1$`OLSAT Verbal Percentile`,na.rm = TRUE)
+[1] 93.67586
+> Copy_of_G_T_Results_2018_19_Responses_Sheet1=Results
+Error: object 'Results' not found
+> Results=Copy_of_G_T_Results_2018_19_Responses_Sheet1
+> mean(Results$`OLSAT Verbal Percentile`,na.rm = TRUE)
+[1] 93.67586
+> Results$`OLSAT Verbal Percentile`=ifelse(is.na(Results$`OLSAT Verbal Percentile`),median(Results$`OLSAT Verbal Percentile`,na.rm = TRUE),Results$`OLSAT Verbal Percentile`)
+> summary(Results)
+   Timestamp                   Entering Grade Level    District     Birth Month       
+ Min.   :2017-03-27 00:00:00   Length:100           Min.   : 1.00   Length:100        
+ 1st Qu.:2018-03-27 00:00:00   Class :character     1st Qu.: 2.00   Class :character  
+ Median :2018-03-27 00:00:00   Mode  :character     Median : 3.50   Mode  :character  
+ Mean   :2025-07-25 10:30:00                        Mean   :11.79                     
+ 3rd Qu.:2018-03-30 06:00:00                        3rd Qu.:22.50                     
+ Max.   :2718-03-01 00:00:00                        Max.   :32.00                     
+ NA's   :4                                                                            
+ OLSAT Verbal Score OLSAT Verbal Percentile NNAT Non Verbal Raw Score
+ Length:100         Min.   : 0.91           Length:100               
+ Class :character   1st Qu.:93.75           Class :character         
+ Mode  :character   Median :98.00           Mode  :character         
+                    Mean   :93.72                                    
+                    3rd Qu.:99.00                                    
+                    Max.   :99.00                                    
+                                                                     
+ NNAT Non Verbal Percentile Overall Score   School Preferences School Assigned   
+ Min.   : 0.00              Min.   :79.00   Length:100         Length:100        
+ 1st Qu.:99.00              1st Qu.:96.00   Class :character   Class :character  
+ Median :99.00              Median :99.00   Mode  :character   Mode  :character  
+ Mean   :93.29              Mean   :97.18                                        
+ 3rd Qu.:99.00              3rd Qu.:99.00                                        
+ Max.   :99.00              Max.   :99.00                                        
+                                                                                 
+ Will you enroll there?    ...13              ...14          
+ Length:100             Length:100         Length:100        
+ Class :character       Class :character   Class :character  
+ Mode  :character       Mode  :character   Mode  :character  
+                                                             
+                                                             
+                                                             
+                                                             
+> Results$Timestamp.R=ifelse(is.na(Results$Timestamp.R),median(Results$Timestamp.R,na.rm = TRUE)Results$Timestamp.R)
+Error: unexpected symbol in "Results$Timestamp.R=ifelse(is.na(Results$Timestamp.R),median(Results$Timestamp.R,na.rm = TRUE)Results"
+> Results$Timestamp.R=ifelse(is.na(Results$Timestamp.R),median(Results$Timestamp.R,na.rm = TRUE),Results$Timestamp.R)
+Error: Assigned data `ifelse(...)` must be compatible with existing data.
+x Existing data has 100 rows.
+x Assigned data has 0 rows.
+i Only vectors of size 1 are recycled.
+Run `rlang::last_error()` to see where the error occurred.
+In addition: Warning message:
+Unknown or uninitialised column: `Timestamp.R`. 
+> head(Results)
+# A tibble: 6 x 14
+  Timestamp           `Entering Grade Level` District `Birth Month` `OLSAT Verbal Score`
+  <dttm>              <chr>                     <dbl> <chr>         <chr>               
+1 2017-03-27 00:00:00 1                            13 August        30                  
+2 2018-03-27 00:00:00 1                             1 March         26                  
+3 2018-03-27 00:00:00 1                             2 February      26                  
+4 2018-03-27 00:00:00 1                             2 January       25                  
+5 2018-03-27 00:00:00 first                         3 January       28                  
+6 2018-03-27 00:00:00 1                             2 May           25                  
+# ... with 9 more variables: OLSAT Verbal Percentile <dbl>,
+#   NNAT Non Verbal Raw Score <chr>, NNAT Non Verbal Percentile <dbl>,
+#   Overall Score <dbl>, School Preferences <chr>, School Assigned <chr>,
+#   Will you enroll there? <chr>, ...13 <chr>, ...14 <chr>
+> Results$`OLSAT Verbal Percentile`=ifelse(is.na(Results$`OLSAT Verbal Percentile`),median(Results$`OLSAT Verbal Percentile`,na.rm = TRUE),Results$`OLSAT Verbal Percentile`
++ Results$`NNAT Non Verbal Raw Score`=ifelse(is.na(Results$`NNAT Non Verbal Raw Score`),median(Results$`NNAT Non Verbal Raw Score`,na.rm = TRUE),Results$`NNAT Non Verbal Raw Score`
+Error: unexpected symbol in:
+"Results$`OLSAT Verbal Percentile`=ifelse(is.na(Results$`OLSAT Verbal Percentile`),median(Results$`OLSAT Verbal Percentile`,na.rm = TRUE),Results$`OLSAT Verbal Percentile`
+Results"
+> Results$`NNAT Non Verbal Raw Score`=ifelse(is.na(Results$`NNAT Non Verbal Raw Score`),median(Results$`NNAT Non Verbal Raw Score`,na.rm = TRUE),Results$`NNAT Non Verbal Raw Score`
++ 
++ 
++ 
++ 
++ Results$`NNAT Non Verbal Raw Score`=ifelse(is.na(Results$`NNAT Non Verbal Raw Score`),median(Results$`NNAT Non Verbal Raw Score`,na.rm = TRUE),Results$`NNAT Non Verbal Raw Score`
+Error: unexpected symbol in:
+"
+Results"
+> Results$`NNAT Non Verbal Raw Score`=ifelse(is.na(Results$`NNAT Non Verbal Raw Score`),median(Results$`NNAT Non Verbal Raw Score`,na.rm = TRUE),Results$`NNAT Non Verbal Raw Score`)
+Warning message:
+In mean.default(sort(x, partial = half + 0L:1L)[half + 0L:1L]) :
+  argument is not numeric or logical: returning NA
+> rename(df, Kindergarten=K)
+Error in rename(df, Kindergarten = K) : could not find function "rename"
+> reshape(wide, direction="long")
+Error in reshape(wide, direction = "long") : object 'wide' not found
+> reshape(Results, direction="long")
+Error in reshape(Results, direction = "long") : 
+  no 'reshapeWide' attribute, must specify 'varying'
+> data_edit(Results)
+
+> library(DataeditR)
+> installed.packages("editdata")
+     Package LibPath Version Priority Depends Imports LinkingTo Suggests Enhances
+     License License_is_FOSS License_restricts_use OS_type Archs MD5sum NeedsCompilation
+     Built
+> library(readxl)
+> Copy_of_G_T_Results_2018_19_Responses_Sheet_1_Dom_Byerly <- read_excel("ANA DATA MINING/Copy of G&T Results 2018-19 Responses - Sheet_1. Dom Byerly.xlsx")
+New names:
+* `` -> ...13
+* `` -> ...14
+> View(Copy_of_G_T_Results_2018_19_Responses_Sheet_1_Dom_Byerly)
+> edit(Results)
+
+> #I used the edit data function to clean up my data and remove rows with too many missing observations
+> #In addition the entering grade level column had to be cleaned and the kindergartens had to be swapped out for "K"
+> #There was also a kinder observation in this column which also had to be changed to K
+> fix(Results)
+Error in edit.data.frame(get(subx, envir = parent), title = subx, ...) : 
+  can only handle vector and factor elements
+> fix(1)
+
+> data.frame(course=c("1","k","2"))
+  course
+1      1
+2      k
+3      2
+> > data.frame(course=c("1","k","2"),grade=c("1st","2nd","Kindergarten"))
+Error: unexpected '>' in ">"
+> 
+> data.frame(course=c("1","k","2"),grade=c("1st","2nd","Kindergarten"))
+  course        grade
+1      1          1st
+2      k          2nd
+3      2 Kindergarten
+> #I then used the data frame tools to reconfigure the names of the observations
+> read.csv(Copy_of_G_T_Results_2018_19_Responses_Sheet_1_Dom_Byerly)
+
+> library(lubridate)
+
+Attaching package: ‘lubridate’
+
+The following objects are masked from ‘package:base’:
+
+    date, intersect, setdiff, union
+
+> ggplot(data=Copy_of_G_T_Results_2018_19_Responses_Sheet_1_Dom_Byerly)
+
+> ggplot(data = Copy_of_G_T_Results_2018_19_Responses_Sheet_1_Dom_Byerly) + 
++     geom_point(mapping = aes(x = day, y = deaths),
++                size = 1.5, alpha = 0.5) + 
++     labs(x = "Entering Grade Level", y = "OLSAT Verbal Percentile") + 
++     ggtitle("Score by Grade Level entered") + 
++     theme_few()
+scrub(x, where, min, max, Birth Month, Test scores)
+colSums (Overall Score, na.rm = FALSE, dims = 1)
+z=apply(x,1,which.min) 
+plot(eatar,eanta,xlim=range(-1,1),ylim=range(-1,1),main=title)
+	identify(eatar,eanta,labels=labels(energysR[,1])  Copy_of_G_T_Results_2018_19_Responses_Sheet1 <- read_excel("ANA DATA MINING/Copy of G&T Results 2018-19 Responses - Sheet1.xlsx")
+rnorm(n,mean,sd)
+date <-strptime(as.character(Birth Month)
+
