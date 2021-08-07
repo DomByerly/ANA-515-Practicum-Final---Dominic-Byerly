@@ -1,3 +1,10 @@
 > #I used the edit data function to clean up my data and remove rows with too many missing observations
 > #In addition the entering grade level column had to be cleaned and the kindergartens had to be swapped out for "K"
 > #There was also a kinder observation in this column which also had to be changed to K
+#I then used the data frame tools to reconfigure the names of the observations
+#in addition i also utilized the ggplot tool to create a graph that demonstrated the relationship between the scores on the verbal test and the year that the person entered school
+#The dates where also all jumbled up and I had to use formatting code to delete the ones that were N/A and establish the right one
+This was also very crucial in the Birth Month as many entries were not constistant and used the number or simply just incorrect spelling
+Using the ifelse command was crucial in both removing and ignoring values that were not consistant or did not provide me with information
+I used the summary command or head command often as well as it let me get either a full or partial look at my dataset so I know what i need to fix or edit
+There was also many numerical observations that were messy or were a fraction of some sort that I cleaned up through R
