@@ -1,0 +1,3 @@
+> #I used the edit data function to clean up my data and remove rows with too many missing observations
+> #In addition the entering grade level column had to be cleaned and the kindergartens had to be swapped out for "K"
+> #There was also a kinder observation in this column which also had to be changed to K
